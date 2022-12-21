@@ -34,7 +34,7 @@ file(GLOB SOURCE_FILES
         *.h
         )
 
-add_executable(graphics graphics.cpp rect.cpp shape.cpp circle.cpp Button.cpp bubble.cpp cube.cpp)
+add_executable(graphics graphics.cpp rect.cpp shape.cpp quad.cpp circle.cpp Button.cpp bubble.cpp cube.cpp)
 if (WIN32)
     target_link_libraries (graphics ${OPENGL_LIBRARIES} freeglut)
 elseif (APPLE)
