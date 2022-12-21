@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(M1OEP)
+project(DanielGraphicsArcade)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -34,7 +34,7 @@ file(GLOB SOURCE_FILES
         *.h
         )
 
-add_executable(graphics graphics.cpp rect.cpp shape.cpp circle.cpp quad.cpp Button.cpp bubble.cpp cube.cpp)
+add_executable(graphics graphics.cpp rect.cpp shape.cpp circle.cpp Button.cpp bubble.cpp cube.cpp)
 if (WIN32)
     target_link_libraries (graphics ${OPENGL_LIBRARIES} freeglut)
 elseif (APPLE)
