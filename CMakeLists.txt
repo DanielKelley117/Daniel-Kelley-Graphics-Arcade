@@ -3,9 +3,9 @@ project(DanielGraphicsArcade)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(M1OEP main.cpp Games.cpp Fighter.cpp CDoubleP.cpp C.cpp Java.cpp Python.cpp Attack.cpp)
+add_executable(Arcade main.cpp Games.cpp Fighter.cpp CDoubleP.cpp C.cpp Java.cpp Python.cpp Attack.cpp)
 
-add_executable(M2OEPTest Programming_Rumble_Testing.cpp Fighter.cpp CDoubleP.cpp C.cpp Java.cpp Python.cpp Attack.cpp)
+add_executable(Programming_Rumble_Test Programming_Rumble_Testing.cpp Fighter.cpp CDoubleP.cpp C.cpp Java.cpp Python.cpp Attack.cpp)
 
 if (WIN32)
     set(FREEGLUT_INCLUDE_DIRS "C:/Program\ Files/Common\ Files/freeglut/include")
