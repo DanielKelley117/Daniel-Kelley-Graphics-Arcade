@@ -53,9 +53,6 @@ string numConfetti;
 string numCompConfetti;
 int confettiPresses;
 
-Button buttonWin({0, 1, 0}, {100, 100}, 300, 150, "Win");
-Button buttonLose({1, 0, 0}, {400, 100}, 300, 150, "Lose");
-
 //This vector is used in Cloud Dodger and Super Architect
 vector<unique_ptr<Shape>> clouds;
 
@@ -312,10 +309,7 @@ void initGL() {
     if (screen != 2) {
         glClearColor(skyBlue.red, skyBlue.green, skyBlue.blue, 1.0f);
     }
-    if (screen == 69) {
-        glClearColor(black.red, black.green, black.blue, 1.0f);
-    }
-
+    
 }
 
 void draw_axes() {
@@ -1422,119 +1416,6 @@ void display() {
         glFlush();
     }
 
-    if (screen == 69) {
-        glViewport(0, 0, width, height); // DO NOT CHANGE THIS LINE (unless you are running Catalina on Mac)
-
-        // Do an orthographic parallel projection with the coordinate
-        // system set to first quadrant, limited by screen/window size
-        glMatrixMode(GL_PROJECTION); // DO NOT CHANGE THIS LINE
-        glLoadIdentity(); // DO NOT CHANGE THIS LINE
-        glOrtho(0.0, width, height, 0.0, -1.f, 1.f); // DO NOT CHANGE THIS LINE
-
-        // Clear the color buffer with current clearing color
-        glClear(GL_COLOR_BUFFER_BIT); // DO NOT CHANGE THIS LINE
-
-        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); // DO NOT CHANGE THIS LINE
-        string direction = "Welcome to Button Presser! Press s to start";
-        points += 500;
-        glRasterPos2i(0, 230);
-        glColor3f(1.0f, 1.0f, 1.0f);
-        for (int i = 0; i < direction.length(); ++i) {
-            glutBitmapCharacter(GLUT_BITMAP_8_BY_13, direction[i]);
-        }
-
-        glFlush();
-
-    }
-
-    if (screen == 690) {
-        glViewport(0, 0, width, height);
-
-        // do an orthographic parallel projection with the coordinate
-        // system set to first quadrant, limited by screen/window size
-        glMatrixMode(GL_PROJECTION);
-        glLoadIdentity();
-        glOrtho(0.0, width, height, 0.0, -1.f, 1.f);
-
-        glClear(GL_COLOR_BUFFER_BIT);   // Clear the color buffer with current clearing color
-
-        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-
-        /*
-         * Draw here
-         */
-
-
-        buttonWin.draw();
-        buttonLose.draw();
-
-
-
-        glFlush(); // Render now
-
-    }
-
-    if (screen == 6900) {
-        glViewport(0, 0, width, height);
-
-        // do an orthographic parallel projection with the coordinate
-        // system set to first quadrant, limited by screen/window size
-        glMatrixMode(GL_PROJECTION);
-        glLoadIdentity();
-        glOrtho(0.0, width, height, 0.0, -1.f, 1.f);
-
-        glClear(GL_COLOR_BUFFER_BIT);   // Clear the color buffer with current clearing color
-
-        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-
-        /*
-         * Draw here
-         */
-
-        string direction = "You win!";
-        points += 500;
-        glRasterPos2i(0, 230);
-        glColor3f(1.0f, 1.0f, 1.0f);
-        for (int i = 0; i < direction.length(); ++i) {
-            glutBitmapCharacter(GLUT_BITMAP_8_BY_13, direction[i]);
-        }
-
-
-
-
-        glFlush(); // Render now
-    }
-
-    if (screen == 69000) {
-        glViewport(0, 0, width, height);
-
-        // do an orthographic parallel projection with the coordinate
-        // system set to first quadrant, limited by screen/window size
-        glMatrixMode(GL_PROJECTION);
-        glLoadIdentity();
-        glOrtho(0.0, width, height, 0.0, -1.f, 1.f);
-
-        glClear(GL_COLOR_BUFFER_BIT);   // Clear the color buffer with current clearing color
-
-        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-
-        /*
-         * Draw here
-         */
-
-        string direction = "You lose!!";
-        points += 500;
-        glRasterPos2i(0, 230);
-        glColor3f(1.0f, 1.0f, 1.0f);
-        for (int i = 0; i < direction.length(); ++i) {
-            glutBitmapCharacter(GLUT_BITMAP_8_BY_13, direction[i]);
-        }
-
-
-
-
-        glFlush(); // Render now
-    }
 
 }
 
